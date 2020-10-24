@@ -1,0 +1,131 @@
+#border-registrar-venda{
+    border-bottom: 5px solid black;
+}
+
+#titulo-pagina{
+    text-align: center;
+    color: white;
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+#campo-formulario{
+    height: 420px;
+    margin-top: 0;
+}
+
+#campo-primeiro-form{
+    display: flex;
+    margin: 0 1rem;
+    color: white;
+    font-size: 1rem;
+}
+
+#primeiro-form{
+    flex: 1;
+    text-align: center;
+}
+#segundo-form{
+    flex: 1;
+    text-align: center;
+}
+
+#terceiro-form{
+    flex: 1;
+    text-align: center;
+}
+
+.text-forms{
+    display: block;
+    text-align: left;
+    margin-left: 5.5rem;
+}
+
+.input-text{
+    height: 1.5rem;
+    width: 15rem;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    outline: none;
+}
+
+.select-text{
+    height: 3.5rem;
+    width: 17rem;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    outline: none;
+}
+
+.text-segundo-forms{
+    margin-top: 4rem;
+}
+
+#button-venda{
+    width: 73rem;
+    border: none;
+    margin: 4rem 4rem 0 6rem;
+    height: 4rem;
+    border-radius: 0.5rem;
+    font-size: 2rem;
+    text-align: center;
+    box-shadow: 1rem 1rem 1rem #00000085;
+    cursor: pointer;
+    font-weight: 600;
+    outline: none;
+}
+
+#button-venda:hover{
+    background-color: #00000085;
+    transition-duration: .5s;
+    color: white;
+}
+
+.popup{
+    position:fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 20rem;
+    height: 10rem;
+    padding: 4rem;
+    border: 1px solid black;
+    background: yellow;
+    display: none;
+}
+
+@media (max-width: 800px) and (max-height: 600px){
+
+    #campo-formulario{
+        height: 300px;
+    }
+
+    .input-text{
+        width: 12rem;
+        padding: .7rem;
+    }
+
+    .select-text{
+        height: 3rem;
+        width: 13.5rem;
+    }
+
+    .text-forms{
+        margin-left: 1.2rem;
+    }
+
+    .text-segundo-forms{
+        margin-top: 2rem;
+    }
+
+    #button-venda{
+        width: 45rem;
+        margin: 2rem 2rem 0 2rem;
+        height: 3rem;
+    }
+
+}

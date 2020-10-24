@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P40-colchões</title>
+
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/editar-produto.css">
+    <link rel="stylesheet" href="../styles/registrar-produto.css">
+</head>
+<body>
+  <div id="corpo">
+    <header>
+       <div id="cabecalho">
+         <img id="logo" src="../images/logo-removebg-preview.png">
+         <nav id="comeco-navegacao">
+           <div id="menu-navegacao">
+             <a href="./home.html" class="icone-link">
+               <ul class="campo-icones">
+                 <li class="icone-text"><img class="icone" src="../images/icone-home.png"></li>
+                 <li class="icone-text">Home</li>
+               </ul>
+             </a>
+             <a href="./vendas.html" class="icone-link">
+               <ul class="icones">
+                 <li class="icone-text"><img class="icone" src="../images/icone-venda.png" alt=""></li>
+                 <li class="icone-text">Vendas</li>
+               </ul>
+             </a>
+             <a href="./estoque.html" class="icone-link">
+               <ul class="icones">
+                 <li class="icone-text"><img class="icone" src="../images/icone-estoque.png" alt=""></li>
+                 <li class="icone-text">Estoque</li>
+               </ul>
+             </a>
+             <a href="./produtos.html" class="icone-link">
+               <ul class="icones">
+                 <li class="icone-text"><img class="icone" src="../images/icone-produtos.png" alt=""></li>
+                 <li class="icone-text" id="border-registrar-produto">Produtos</li>
+               </ul>
+             </a>
+           </div>
+         </nav>
+       </div>
+    </header>
+        <div id="titulo-pagina">
+            <p>Editar produto</p>
+        </div>
+        <form id="productForm">
+        <div id="campo-formulario">
+          <div class="campo-primeiro-form">
+            <div class="primeiro-form" id="primeiro-form">
+                <label class="text-forms" id="text-forms-primary" for="nome-produto">Nome do produto</label>
+                <input class="input-text" type="text" id="nome-produto" placeholder="Ex: 1" required="required" autofocus>
+            </div>
+            <div class="segundo-form">
+                <label class="text-forms" id="text-forms-secondy" for="valor-minimo">Valor mínimo</label>
+                <input class="input-text" type="text" id="valor-minimo" placeholder="R$ " required="required">
+            </div>
+            <div id="terceiro-form" id="terceiro-form">
+              <label class="text-forms" id="text-forms-tree" for="valor-maximo">Valor máximo</label> 
+              <input class="input-text" type="text" id="valor-maximo" placeholder="R$ " required="required">
+          </div>
+        </div>
+        <div class="campo-primeiro-form">
+            <div class="primeiro-form">
+                <label class="text-forms text-segundo-forms" for="valor-compra">Valor de compra</label>
+                <input class="input-text input-text-form-dois" type="text" id="valor-compra" placeholder="R$ " required="required">
+            </div>
+            <div class="segundo-form">
+                <label class="text-forms text-segundo-forms" id="text-forms-dois" for="comissao">Quantidade</label>
+                <input class="input-text input-text-form-dois" id="quantidade" type="text" name="comissao" id="comissao" placeholder="Ex: 1 " required="required">
+            </div>
+            </div>
+            <button id="button-venda">Salvar edição</button>
+        </div>
+        
+      </form>
+      
+        <footer id="rodape">
+         
+        </footer>
+
+        <script src="../editar-produto.js">
+        </script>
+
+</body>
+</html>

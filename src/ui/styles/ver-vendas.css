@@ -1,0 +1,91 @@
+#titulo-pagina{
+    text-align: center;
+    color: white;
+    font-weight: 600;
+    font-size: 2rem;
+}
+table{
+    border-collapse: collapse;
+}
+
+table th, table td{
+    padding: 10px;
+    border: 1px solid black;
+}
+table th{
+    background-color: white;
+}
+
+#corpo-table{
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    overflow: scroll;
+    overflow-x: hidden;    
+}
+
+.cabecalho{
+    text-align: center;
+    color: white;
+}
+
+#button-editar{
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+#campo-button{
+    display: flex;
+    flex-direction: row-reverse;
+    margin-right: 6.5rem;
+}
+
+#button-fechar-mes{
+    border: none;
+    background-color: white;
+    height: 2rem;
+    width: 15rem;
+    border-radius: .5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: .5rem;
+}
+
+#border-ver-vendas{
+    border-bottom: 5px solid black;
+}
+
+@media (max-width: 800px) and (max-height: 600px){
+
+    table th, table td{
+        padding: 3px;
+    }
+
+    .campo-editar, .campo-lucro, #campo-lucro{
+        display: none;
+    }
+
+    #corpo-table{
+        height: 200px;
+    }
+
+    table{
+        font-size: .75rem;
+    }
+
+    #button-fechar-mes{
+        height: 1.5rem;
+        width: 10rem;
+    }
+
+    #campo-button{
+        margin-right: 1.5rem;
+
+    }
+
+
+
+
+
+}

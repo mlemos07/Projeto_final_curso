@@ -1,0 +1,62 @@
+#titulo-pagina{
+    text-align: center;
+    color: white;
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+#caixa-buttons{
+    height: 400px;
+    font-size: 2rem;
+}
+
+#buttons{
+    height: 18rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button:hover{
+    background-color: #00000085;
+    transition-duration: .5s;
+    color: white;
+}
+
+.button{
+    background-color: #FFFFFF;
+    padding: 4rem 10rem;
+    width: 17rem;
+    text-align: center;
+    border-radius: .5rem;
+    text-decoration: none;
+    margin-top: 0;
+    color: black;
+    font-weight: 500;
+    box-shadow: 1rem 1rem 1rem #00000085;
+}
+
+#botao-ver-vendas{
+    margin-right: 2rem;
+}
+
+#border-venda{
+    border-bottom: 5px solid black;
+}
+
+@media (max-width: 800px) and (max-height: 600px){
+
+    #caixa-buttons{
+        height: 300px;
+    }
+    #buttons{
+        height: 10rem;
+    }
+
+    .button{
+        padding: 3rem 2.5rem;
+    }
+
+
+}
+

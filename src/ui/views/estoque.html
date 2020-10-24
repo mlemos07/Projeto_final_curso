@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P40 - colchões</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/estoque.css">
+    <link rel="stylesheet" href="../styles/ver-vendas.css">
+</head>
+<body>
+    <div id="corpo">
+        <header>
+           <div id="cabecalho">
+             <img id="logo" src="../images/logo-removebg-preview.png">
+             <nav id="comeco-navegacao">
+               <div id="menu-navegacao">
+                 <a href="./home.html" class="icone-link">
+                   <ul class="campo-icones">
+                     <li class="icone-text"><img class="icone" src="../images/icone-home.png"></li>
+                     <li class="icone-text">Home</li>
+                   </ul>
+                 </a>
+                 <a href="./vendas.html" class="icone-link">
+                   <ul class="icones">
+                     <li class="icone-text"><img class="icone" src="../images/icone-venda.png" alt=""></li>
+                     <li class="icone-text">Vendas</li>
+                   </ul>
+                 </a>
+                 <a href="./estoque.html" class="icone-link">
+                   <ul class="icones">
+                     <li class="icone-text"><img class="icone" src="../images/icone-estoque.png" alt=""></li>
+                     <li class="icone-text" id="border-estoque">Estoque</li>
+                   </ul>
+                 </a>
+                 <a href="./produtos.html" class="icone-link">
+                   <ul class="icones">
+                     <li class="icone-text"><img class="icone" src="../images/icone-produtos.png" alt=""></li>
+                     <li class="icone-text">Produtos</li>
+                   </ul>
+                 </a>
+               </div>
+             </nav>
+           </div>
+        </header>
+        </div>
+        <div id="titulo-pagina">
+            <p>Estoque</p>
+          </div>
+        <div id="corpo-table">
+            <table id="tabela">
+                <thead>
+                  <tr id="cabecalho-tabela">
+                    <th>Nome do produto</th>
+                    <th>Código</th>
+                    <th>Quantidade disponível</th>
+                    <th>Adicionar quantidade</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr id="assunto-table">
+                    <td class="cabecalho">Iso superpocket 1,08 solteirão</td>
+                    <td class="cabecalho">XXX</td>
+                    <td class="cabecalho">1</td>
+                    <td class="cabecalho"><button onclick="popupAdicionar()" type="button" id="button-adicionar">Adicionar</button></td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+        <div id="popup-adicionar-quantidade">
+           <img onclick="popupFechar()" src="../imagens/fechar.png" alt="" id="icone-fechar">
+            <div id="campo-titulo-adicionar-quantidade">
+                <p id="titulo-adicionar-quantidade">Adicionar</p>
+            </div>
+            <div id="campo-input-adicionar-quantidade">
+                <form action="">
+                    <input id="input-adicionar-quantidade" type="text" placeholder="Ex: 10">
+                </form>
+            </div>
+            <div id="campo-button-adicionar">
+                <button  id="button-salvar" type="button">Salvar</button>
+            </div>
+        </div>
+        <footer id="rodape">
+         
+        </footer>
+
+        <script src="../controller/ver-vendas.js"></script>
+        <script src="../controller/estoque.js"></script>
+</body>
+</html>
