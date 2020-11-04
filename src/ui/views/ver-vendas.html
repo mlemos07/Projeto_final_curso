@@ -59,10 +59,11 @@
             <th>Responsável pela comissão</th>
             <th class="campo-lucro">Lucro</th>
             <th class="campo-editar">Editar</th>
+            <th class="campo-editar">Excluir</th>
           </tr>
         </thead>
-        <tbody>
-          <tr id="assunto-table">
+        <tbody id="assunto-table">
+         <!-- <tr >
             <td class="cabecalho">Iso superpocket 1,08 solteirão</td>
             <td class="cabecalho">1</td>
             <td class="cabecalho">05/09/2020</td>
@@ -72,12 +73,12 @@
             <td class="cabecalho">Sem responsável</td>
             <td class="cabecalho" id="campo-lucro">R$ XX.XX</td>
             <td class="campo-editar" class="cabecalho"> <a href="./editar-venda.html"><button type="button" id="button-editar">Editar</button></a> </td>
-          </tr>
+          </tr>-->
         </tbody>
       </table>
     </div>
     <div id="campo-button">
-      <button id="button-fechar-mes" type="button">Fechar mês</button>
+      <button id="button-fechar-mes" type="button" onclick="deleteInfo()">Fechar mês</button>
     </div>
         <footer id="rodape">
          
@@ -87,6 +88,6 @@
         
         
 
-        <script src="../controller/ver-vendas.js"></script>
+        <script src="../ver-vendas.js"></script>
 </body>
 </html>

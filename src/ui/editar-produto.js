@@ -11,6 +11,7 @@ const productValueCompra = document.getElementById('valor-compra');
 const productQuantidade = document.getElementById('quantidade');
 
 let editProductId = '';
+
 async function edit(){ 
         const id = localStorage.getItem('Produtoid');
         const product = await main.getProductById(id);
@@ -23,9 +24,6 @@ async function edit(){
         productValueCompra.value = product.VALOR_COMPRA;
         productQuantidade.value = product.QUANTIDADE;
         editProductId = product.CODIGO_PRODUTO; 
-
-        
-        
         
 }
 edit();

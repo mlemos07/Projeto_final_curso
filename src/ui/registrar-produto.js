@@ -22,8 +22,16 @@ productForm.addEventListener('submit', async (e) => {
         quantidade: productQuantidade.value
     }
 
+    const newProductEstoque = {
+        nome_produto_estoque: productName.value,
+        quantidade_produto_estoque: productQuantidade.value
+    }
+
+
     const result = await main.createProduct(newProduct);
-    console.log(result);
+    const estoque = await main.createProductEstoque(newProductEstoque);
+    console.log(estoque)
+    //console.log(result);
     /*const response = confirm("Deseja adicionar outro produto?");
     if(!response){
         BrowserWindow.loadFile("../ui/views/ver-produtos.html");

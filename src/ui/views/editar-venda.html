@@ -3,87 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>P40 - colchões</title>
-    <link rel="stylesheet" href="../styles/main.css">
+    <title>P40-colchões</title>
     <link rel="stylesheet" href="../styles/registrar-venda.css">
-    <link rel="stylesheet" href="../styles/editar-vendas.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../../../node_modules/sweetalert2/dist/sweetalert2.min.css">
 </head>
 <body>
-    <div id="corpo">
-        <header>
-           <div id="cabecalho">
-             <img id="logo" src="../images/logo-removebg-preview.png">
-             <nav id="comeco-navegacao">
-               <div id="menu-navegacao">
-                 <a href="./home.html" class="icone-link">
-                   <ul class="campo-icones">
-                     <li class="icone-text"><img class="icone" src="../images/icone-home.png"></li>
-                     <li class="icone-text">Home</li>
-                   </ul>
-                 </a>
-                 <a href="./vendas.html" class="icone-link">
-                   <ul class="icones">
-                     <li class="icone-text"><img class="icone" src="../images/icone-venda.png" alt=""></li>
-                     <li class="icone-text" id="border-venda">Vendas</li>
-                   </ul>
-                 </a>
-                 <a href="./estoque.html" class="icone-link">
-                   <ul class="icones">
-                     <li class="icone-text"><img class="icone" src="../images/icone-estoque.png" alt=""></li>
-                     <li class="icone-text">Estoque</li>
-                   </ul>
-                 </a>
-                 <a href="./produtos.html" class="icone-link">
-                   <ul class="icones">
-                     <li class="icone-text"><img class="icone" src="../images/icone-produtos.png" alt=""></li>
-                     <li class="icone-text">Produtos</li>
-                   </ul>
-                 </a>
-               </div>
-             </nav>
+  <div id="corpo">
+    <header>
+       <div id="cabecalho">
+         <img id="logo" src="../images/logo-removebg-preview.png">
+         <nav id="comeco-navegacao">
+           <div id="menu-navegacao">
+             <a href="./home.html" class="icone-link">
+               <ul class="campo-icones">
+                 <li class="icone-text"><img class="icone" src="../images/icone-home.png"></li>
+                 <li class="icone-text">Home</li>
+               </ul>
+             </a>
+             <a href="./vendas.html" class="icone-link">
+               <ul class="icones">
+                 <li class="icone-text"><img class="icone" src="../images/icone-venda.png" alt=""></li>
+                 <li class="icone-text" id="border-registrar-venda">Vendas</li>
+               </ul>
+             </a>
+             <a href="./estoque.html" class="icone-link">
+               <ul class="icones">
+                 <li class="icone-text"><img class="icone" src="../images/icone-estoque.png" alt=""></li>
+                 <li class="icone-text">Estoque</li>
+               </ul>
+             </a>
+             <a href="./produtos.html" class="icone-link">
+               <ul class="icones">
+                 <li class="icone-text"><img class="icone" src="../images/icone-produtos.png" alt=""></li>
+                 <li class="icone-text">Produtos</li>
+               </ul>
+             </a>
            </div>
-        </header>
-    </div>
-    <div id="titulo-pagina">
-        <p>Editar venda</p>
-    </div>
-    <form action="">
+         </nav>
+       </div>
+    </header>
+        <div id="titulo-pagina">
+            <p>Registrar venda</p>
+        </div>
+        <form id="productForm" >
         <div id="campo-formulario">
             <div id="campo-primeiro-form">
                 <div id="primeiro-form">
-                    <label class="text-forms" for="codigo-produto">Código do produto</label>
-                    <input class="input-text" type="text" name="codigo-produto" id="codigo-produto"  >
+                    <label class="text-forms" for="nome-produto">Nome do produto</label>
+                    <select class="select-text" id="nome-produto" required="required">
+                      <!---<option value="volvo">Selecione uma opção</option>
+                      <option value="saab">Iso superpocket 1,08 solteirão</option>
+                      <option value="mercedes">Iso superpocket 1,08 solteirão</option>
+                      <option value="audi">Iso superpocket 1,08 solteirão</option>-->
+                    </select>
                 </div>
                 <div id="segundo-form">
                     <label class="text-forms" for="valor-venda">Valor da venda</label>
-                    <input class="input-text" type="text" name="valor-venda" id="valor-venda" >
+                    <input class="input-text" type="text" id="valor-venda" placeholder="R$ " required="required">
                 </div>
                 <div id="terceiro-form">
                     <label class="text-forms" for="parcelas">Parcelas</label>
-                    <input class="input-text" type="text" name="parcelas" id="parcelas" >
+                    <input class="input-text" type="text" id="parcelas" placeholder="Ex: 10" required="required">
                 </div>
             </div>
             <div id="campo-primeiro-form">
                 <div id="primeiro-form">
                     <label class="text-forms text-segundo-forms" for="quantidade">Quantidade</label>
-                    <input class="input-text" type="text" name="quantidade" id="quantidade">
+                    <input class="input-text" type="text" id="quantidade" placeholder="Ex: 1" required="required">
                 </div>
                 <div id="segundo-form">
                     <label class="text-forms text-segundo-forms" for="comissao">Comissão</label>
-                    <input class="input-text" type="text" name="comissao" id="comissao" >
+                    <input class="input-text" type="text"  id="comissao" placeholder="R$ " required="required">
                 </div>
                 <div id="terceiro-form">
                     <label class="text-forms text-segundo-forms" for="responsavel-comissao">Responsável pela comissão</label>
-                    <input class="input-text" type="text" name="responsavel-comissao" id="responsavel-comissao" >
+                    <input class="input-text" type="text" id="responsavel-comissao" placeholder="Digite seu nome:" required="required">
                 </div>
             </div>
-            <button type="button" id="button-venda">Salvar edição</button>
+            <button id="button-venda">Salvar venda</button>
         </div>
         
       </form>
-
-    <footer id="rodape">
+      
+        <footer id="rodape">
          
-    </footer>
+        </footer>
+
+       <script src="../editar-venda.js"></script>
 </body>
 </html>

@@ -57,35 +57,37 @@
                     <th>Adicionar quantidade</th>
                   </tr>
                 </thead>
-                <tbody>
-                  <tr id="assunto-table">
+                <tbody id="assunto-table">
+                  <!-- <tr>
                     <td class="cabecalho">Iso superpocket 1,08 solteirão</td>
                     <td class="cabecalho">XXX</td>
                     <td class="cabecalho">1</td>
                     <td class="cabecalho"><button onclick="popupAdicionar()" type="button" id="button-adicionar">Adicionar</button></td>
-                  </tr>
+                  </tr> -->
                 </tbody>
               </table>
         </div>
         <div id="popup-adicionar-quantidade">
-           <img onclick="popupFechar()" src="../imagens/fechar.png" alt="" id="icone-fechar">
+           <img onclick="popupFechar()" src="../images/fechar.png" alt="" id="icone-fechar">
             <div id="campo-titulo-adicionar-quantidade">
                 <p id="titulo-adicionar-quantidade">Adicionar</p>
             </div>
             <div id="campo-input-adicionar-quantidade">
-                <form action="">
+                <form id="estoqueForm">
                     <input id="input-adicionar-quantidade" type="text" placeholder="Ex: 10">
                 </form>
             </div>
             <div id="campo-button-adicionar">
-                <button  id="button-salvar" type="button">Salvar</button>
+                <button  id="button-salvar" type="button" onclick="adicionarValor()">Salvar</button>
             </div>
         </div>
         <footer id="rodape">
          
         </footer>
 
-        <script src="../controller/ver-vendas.js"></script>
-        <script src="../controller/estoque.js"></script>
+        <!--<script src="../controller/ver-vendas.js"></script>-->
+        <!--<script src="../controller/estoque.js"></script>-->
+
+        <script src="../estoque.js"></script>
 </body>
 </html>
