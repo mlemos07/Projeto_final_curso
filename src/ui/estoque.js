@@ -3,7 +3,6 @@ const main = remote.require('./main');
 
 let produtosEstoque = [];
 const estoqueList = document.getElementById('assunto-table');
-//const estoqueForm = document.getElementById('estoqueForm');
 const adicionaValor = document.getElementById('input-adicionar-quantidade');
 
 function popupAdicionar(id){
@@ -24,7 +23,6 @@ async function adicionarValor(){
     valorInput = parseInt(valorInput)
     const valorTotal = (result.QUANTIDADE_PRODUTO_ESTOQUE + valorInput)
                    await main.updateQuantidade(idEstoque, valorTotal);
-    console.log(result.QUANTIDADE_PRODUTO_ESTOQUE)
     popupFechar();
     getProducts();
 }

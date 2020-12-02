@@ -19,7 +19,6 @@ const getNomeProducts = async () => {
 function renderProducts(products) {
 
     products.forEach((produtos) => {
-        //console.log(produtos)
         vendaName.innerHTML += `
         <option value="${produtos.NOME_PRODUTO}">${produtos.NOME_PRODUTO}</option>
         `;
@@ -37,12 +36,9 @@ productForm.addEventListener('submit', async (e) =>{
     e.preventDefault();
 
     const result = await main.resultLucro(vendaName.value);
-    //console.log(result)
-
-    //console.log(result.VALOR_COMPRA)
+    const resultQuantidade = await main.getQuantidadeEstoqueVenda(vendaName.value);
     const lucro = (vendaValor.value - result.VALOR_COMPRA)
-    //console.log(lucro)
-
+    const quantidadeFinalEstoque = (resultQuantidade.QUANTIDADE_PRODUTO_ESTOQUE - vendaQuantidade.value);
 
     const newVenda = {
         nome_produto_venda: vendaName.value,
@@ -54,11 +50,9 @@ productForm.addEventListener('submit', async (e) =>{
         data_venda: data,
         lucro: lucro
     }
-
-    //const result1 = 
+    
     await main.createVenda(newVenda);
-    productForm.reset();
-    //console.log(result1)
+    await main.updateQuantidadeEstoqueVenda(vendaName.value, quantidadeFinalEstoque )
 
 });
 

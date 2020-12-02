@@ -31,7 +31,6 @@ async function edit(){
    
     const id = localStorage.getItem('VendaId');
     resultVenda = await main.getVendaById(id)
-    console.log(resultVenda);
 
     vendaName.value = resultVenda.NOME_PRODUTO_VENDA
     vendaValor.value = resultVenda.VALOR_VENDA
@@ -47,11 +46,7 @@ productForm.addEventListener('submit', async (e) =>{
     e.preventDefault();
 
     const result = await main.resultLucro(vendaName.value);
-    //console.log(result)
-
-    //console.log(result.VALOR_COMPRA)
     const lucro = (vendaValor.value - result.VALOR_COMPRA)
-    //console.log(lucro)
 
 
     const newVenda = {

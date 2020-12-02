@@ -15,8 +15,6 @@ let editProductId = '';
 async function edit(){ 
         const id = localStorage.getItem('Produtoid');
         const product = await main.getProductById(id);
-        console.log(product)
-
 
         productName.value = product.NOME_PRODUTO;
         productValueMin.value = product.VALOR_MINIMO;
@@ -41,7 +39,7 @@ productForm.addEventListener('submit', async (e) => {
         }
         const response = confirm("Realmente deseja salvar com esses valores?");
                 if(response){
-                await main.updateProduct(editProductId, newProduct);
+                await main.updateProduct(editProductId, newProduct, productName.value);
         } return;
         
 })

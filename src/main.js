@@ -1,11 +1,6 @@
 const { BrowserWindow, Notification } = require("electron");
 const { getConnection } = require("./database");
 
-
-//const { mostrarPopup } = require('./ui/controller/registrar-produto');
-
-// Produtos
-
 async function createProduct(produtos){
     try {
         const conn = await getConnection();
@@ -14,7 +9,6 @@ async function createProduct(produtos){
         produtos.valor_compra =  parseFloat(produtos.valor_compra);
         produtos.quantidade =  parseInt(produtos.quantidade);
         const result = await conn.query('INSERT INTO produtos SET ?', produtos);
-        //mostrarPopup();
 
         new Notification ({
           title: 'Cadastro de produto',
@@ -34,33 +28,32 @@ async function createProduct(produtos){
 async function getProducts(){
   const conn = await getConnection();
   const results = await conn.query('SELECT * FROM produtos');
-  //console.log(results);
   return results;
 }  
 
 async function deleteProduct(id){
   const conn = await getConnection();
   const result = await conn.query('DELETE FROM produtos WHERE CODIGO_PRODUTO = ?', id);
-  //console.log(result);
+  await conn.query('DELETE FROM estoque WHERE CODIGO_ESTOQUE = ?', id);
   return result;
 }
 
 async function getProductById(id){
   const conn = await getConnection();
   try{
-    const result = await conn.query('SELECT * FROM produtos WHERE CODIGO_PRODUTO = ?', id)
-    //console.log(result[0]);
+    const result = await conn.query('SELECT * FROM produtos WHERE CODIGO_PRODUTO = ?', id);
     return result[0];   
   }catch(error){
     console.log(error);
   }
 } 
 
-async function updateProduct(id, product){
+async function updateProduct(id, product, nomeAtual){
 
   try {
     const conn = await getConnection();
     await conn.query('UPDATE produtos SET ? WHERE CODIGO_PRODUTO = ?', [product, id]);
+    await conn.query('UPDATE estoque SET estoque.NOME_PRODUTO_ESTOQUE = ? WHERE CODIGO_ESTOQUE = ?', [nomeAtual, id])
     window.loadFile("src/ui/views/ver-produtos.html");
 
     new Notification ({
@@ -79,7 +72,6 @@ async function updateProduct(id, product){
 async function getNomeProducts(){
   const conn = await getConnection();
   const results = await conn.query('SELECT produtos.NOME_PRODUTO FROM produtos');
-  console.log(results);
   return results;
 }
 
@@ -122,7 +114,6 @@ async function getVendaById(id){
   const conn = await getConnection();
   try {
     const result = await conn.query('SELECT * FROM vendas WHERE CODIGO_VENDA = ?', id)
-    //console.log(result[0])
     return result[0]
 
   } catch (error) {
@@ -164,8 +155,7 @@ async function deleteInfos(){
 async function createProductEstoque(productEstoque){
   try {
     const conn = await getConnection();
-    const result = await conn.query('INSERT INTO estoque SET ?', productEstoque)
-    console.log(result);
+    const result = await conn.query('INSERT INTO estoque SET ?', productEstoque);
     return productEstoque
 
   } catch (error) {
@@ -188,8 +178,7 @@ async function getEstoque(){
 async function getQuantidadeEstoque(id){
   try {
     const conn = await getConnection();
-    const quantidade = await conn.query('SELECT estoque.QUANTIDADE_PRODUTO_ESTOQUE FROM estoque WHERE CODIGO_ESTOQUE = ?', id)
-    console.log(quantidade[0])
+    const quantidade = await conn.query('SELECT estoque.QUANTIDADE_PRODUTO_ESTOQUE FROM estoque WHERE CODIGO_ESTOQUE = ?', id);
     return quantidade[0]
   } catch (error) {
     console.log(error);
@@ -205,6 +194,20 @@ async function updateQuantidade(id, valor){
   }
 }
 
+async function getQuantidadeEstoqueVenda(nome){
+  const conn = await getConnection();
+  const quantidade = await conn.query('SELECT estoque.QUANTIDADE_PRODUTO_ESTOQUE FROM estoque WHERE NOME_PRODUTO_ESTOQUE = ?', nome);
+  return quantidade[0];
+}
+
+async function updateQuantidadeEstoqueVenda(nome, quantidade){
+  try {
+    const conn = await getConnection();
+    await conn.query('UPDATE estoque SET estoque.QUANTIDADE_PRODUTO_ESTOQUE = ? WHERE NOME_PRODUTO_ESTOQUE = ?', [quantidade, nome]);
+  } catch (error) {
+    console.log(error)
+  }
+}
 
 let window;
 
@@ -251,5 +254,7 @@ module.exports = {
   createProductEstoque,
   getEstoque,
   getQuantidadeEstoque,
-  updateQuantidade
+  updateQuantidade,
+  getQuantidadeEstoqueVenda,
+  updateQuantidadeEstoqueVenda
 }

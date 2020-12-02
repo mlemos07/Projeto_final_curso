@@ -25,7 +25,6 @@ async function Receber(id){
 function renderProducts(products) {
     productsList.innerHTML = "";
     products.forEach((produtos) => {
-        //console.log(produtos)
         productsList.innerHTML += `
         <tr>
         <td class="cabecalho">${produtos.NOME_PRODUTO}</td>

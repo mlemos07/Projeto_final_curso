@@ -30,13 +30,8 @@ productForm.addEventListener('submit', async (e) => {
 
     const result = await main.createProduct(newProduct);
     const estoque = await main.createProductEstoque(newProductEstoque);
-    console.log(estoque)
-    //console.log(result);
-    /*const response = confirm("Deseja adicionar outro produto?");
-    if(!response){
-        BrowserWindow.loadFile("../ui/views/ver-produtos.html");
-    } */
-        productForm.submit();
+
+    productForm.submit();
 
     
 }); 
