@@ -8,8 +8,7 @@
 
 ## 📝 Sobre:
 
-O projeto consiste na construção de um sistema desktop para o PFC - projeto final de curso do SENAI. Nele conterá o cadastro, exclusão e edição dos produtos, das vendas e a atualização do estoque. 
-O aplicativo ainda está em andamento, contendo apenas a seção dos produtos pronta. 
+O projeto consiste na construção de um sistema desktop para o PFC - projeto final de curso do SENAI, o qual permite o gerenciamento dos produtos, das vendas e do estoque da loja. 
 
 ---
 
@@ -27,9 +26,10 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias:
 
 ## ⚠ Observações:
 
-- O projeto ainda está em andamento. Tendo em vista o término para o mês de dezembro. 
-- Em breve mais atualizações.
+- O projeto é composto por um banco de dados.
+- Caminho para acesso à estrutura.
+- src --> db --> sql.js.
 
 ---
 
-Em construção por Marianna Lemos 💛.
+Desenvolvido por Marianna Lemos 💛.
