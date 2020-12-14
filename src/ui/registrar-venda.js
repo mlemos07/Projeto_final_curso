@@ -29,6 +29,9 @@ const time = new Date();
 const dia = time.getDate();
 const mes = time.getMonth() + 1;
 const ano = time.getFullYear();
+    if(dia < 10) {
+        dia = '0' + time.getDate();
+    }
 const data = `${dia}/${mes}/${ano}`;
 
 

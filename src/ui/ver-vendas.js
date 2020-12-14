@@ -26,11 +26,11 @@ function renderVendas(vendas){
         <td class="cabecalho">${vendas.NOME_PRODUTO_VENDA}</td>
         <td class="cabecalho">${vendas.QUANTIDADE_VENDA}</td>
         <td class="cabecalho">${vendas.DATA_VENDA}</td>
-        <td class="cabecalho">R$ ${vendas.VALOR_VENDA}</td>
+        <td class="cabecalho">R$ ${parseFloat(vendas.VALOR_VENDA).toFixed(2)}</td>
         <td class="cabecalho">${vendas.PARCELAS_VENDA}</td>
-        <td class="cabecalho">R$ ${vendas.COMISSAO}</td>
+        <td class="cabecalho">R$ ${parseFloat(vendas.COMISSAO).toFixed(2)}</td>
         <td class="cabecalho">${vendas.RESPONSAVEL_COMISSAO}</td>
-        <td class="cabecalho" id="campo-lucro">R$ ${vendas.LUCRO}</td>
+        <td class="cabecalho" id="campo-lucro">R$ ${parseFloat(vendas.LUCRO).toFixed(2)}</td>
         <td class="campo-editar" class="cabecalho"><button type="button" id="button-editar" onclick="Receber(${vendas.CODIGO_VENDA})">Editar</button></td>
         <td class="campo-editar" class="cabecalho"><button type="button" id="button-editar" onclick="deleteProduct(${vendas.CODIGO_VENDA})">Excluir</button></td>
         </tr>

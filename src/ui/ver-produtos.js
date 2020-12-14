@@ -29,9 +29,9 @@ function renderProducts(products) {
         <tr>
         <td class="cabecalho">${produtos.NOME_PRODUTO}</td>
         <td class="cabecalho">${produtos.CODIGO_PRODUTO}</td>
-        <td class="cabecalho">${produtos.VALOR_MINIMO}</td>
-        <td class="cabecalho">${produtos.VALOR_MAXIMO}</td>
-        <td class="cabecalho">${produtos.VALOR_COMPRA}</td>
+        <td class="cabecalho">R$ ${parseFloat(produtos.VALOR_MINIMO).toFixed(2)}</td>
+        <td class="cabecalho">R$ ${parseFloat(produtos.VALOR_MAXIMO).toFixed(2)}</td>
+        <td class="cabecalho">R$ ${parseFloat(produtos.VALOR_COMPRA).toFixed(2)}</td>
         <td class="cabecalho">${produtos.QUANTIDADE}</td>
         <td class="cabecalho"><button id="button-editar" onclick="Receber('${produtos.CODIGO_PRODUTO}')">Editar</button></td>
         <td class="cabecalho"><button onclick="deleteProduct('${produtos.CODIGO_PRODUTO}')">Excluir</button></td>
